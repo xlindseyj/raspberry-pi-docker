@@ -1,0 +1,5 @@
+docker run -d \
+    -p 8070:8070 \
+    -v jenkins_data:/var/jenkins_home \
+    --name jenkins \
+    jenkins/jenkins
