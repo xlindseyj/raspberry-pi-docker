@@ -1,0 +1,15 @@
+docker run \
+  -d \
+  --name=plex \
+  --network=host \
+  --restart=unless-stopped \
+  -e TZ="America/New_york" \
+  -e PLEX_CLAIM="claim-YxJxQhhFAmQ1Tt6GcyU5" \
+  -e VERSION=docker \
+  -e ADVERTISE_IP=http://192.168.4.151:32400/ \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -v /home/pi/plex/database:/config \
+  -v /home/pi/plex/transcode:/transcode \
+  -v /home/pi/plex/media:/data \
+  ghcr.io/linuxserver/plex
